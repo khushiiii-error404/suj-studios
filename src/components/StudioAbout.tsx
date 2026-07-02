@@ -83,7 +83,7 @@ export default function StudioAbout() {
             </div>
             <div className="flex justify-between items-center text-[10px] text-studio-silver font-mono px-1">
               <span>CAMERA: LEICA / HASSELBLAD REF</span>
-              <span>WESTERN GHATS, INDIA</span>
+              <span>Chikmaglur, INDIA</span>
             </div>
           </motion.div>
 
