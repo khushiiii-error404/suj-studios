@@ -54,7 +54,26 @@ export default function Hero({ onNavigate }: HeroProps) {
               transition={{ duration: 1.4, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="serif-header text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-white leading-none mb-4 pt-1"
             >
-              SUJ STUDIOS
+             <span className="inline-flex items-center select-none pointer-events-none shrink-0">
+                <svg
+                  viewBox="8 8 104 29"
+                  className="h-[0.72em] w-auto text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  {/* Stylized S - Matching PDF Logo exactly */}
+                  <path d="M 12 10 H 46" />
+                  <path d="M 21 10 L 17 23 H 42 C 42 31, 37 35, 26 35" />
+                  {/* Stylized U - Matching PDF Logo exactly */}
+                  <path d="M 54 10 V 35 H 80 V 10" />
+                  {/* Stylized J - Matching PDF Logo exactly */}
+                  <path d="M 90 14 H 106 C 106 23, 102 35, 92 35" />
+                </svg>
+              </span>
+              <span>STUDIOS</span>
             </motion.h1>
 
             {/* Subtitle */}

@@ -292,6 +292,7 @@ export default function ContactSection({ selectedPlanId, onClearPlan }: ContactS
                     </p>
                   </div>
 
+                 
                   {/* Dynamic Action suite on Success */}
                   <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
                     <button
@@ -331,138 +332,94 @@ export default function ContactSection({ selectedPlanId, onClearPlan }: ContactS
             </AnimatePresence>
           </div>
 
-          {/* Right Block: Dynamic Live Proposal Draft / Contract (5 columns) */}
-          <div className="lg:col-span-5 flex flex-col gap-8">
-            
-            {/* Live proposal card */}
-            <div className="bg-studio-bg border border-studio-silver/10 p-8 flex flex-col gap-6 shadow-md relative">
-              {/* Draft label */}
-              <div className="absolute top-4 right-4 font-mono text-[8px] text-studio-silver uppercase tracking-widest border border-studio-secondary px-2 py-0.5 bg-studio-secondary">
-                LIVE COMPILER OUTPUT
-              </div>
-
-              <div className="flex items-center gap-3 border-b border-studio-secondary pb-4">
-                <FileText className="h-5 w-5 text-studio-silver" />
-                <span className="mono-label text-[9px] text-studio-charcoal font-bold">
-                  STUDIO WORK-ORDER DRAFT
-                </span>
-              </div>
-
-              {/* Dynamic draft elements */}
-              <div className="flex flex-col gap-5 text-xs font-sans text-studio-graphite leading-relaxed">
-                <div className="flex flex-col sm:grid sm:grid-cols-3 gap-1 sm:gap-2 border-b border-studio-secondary/50 pb-2">
-                  <span className="mono-label text-[8px] text-studio-silver">CONTRACTOR:</span>
-                  <span className="sm:col-span-2 font-mono text-studio-charcoal uppercase font-bold text-[10px]">
-                    SUJ STUDIOS LTD
-                  </span>
-                </div>
-
-                <div className="flex flex-col sm:grid sm:grid-cols-3 gap-1 sm:gap-2 border-b border-studio-secondary/50 pb-2">
-                  <span className="mono-label text-[8px] text-studio-silver">CLIENT ORG:</span>
-                  <span className="sm:col-span-2 font-bold text-studio-charcoal">
-                    {name || 'Awaiting Input...'}
-                  </span>
-                </div>
-
-                <div className="flex flex-col sm:grid sm:grid-cols-3 gap-1 sm:gap-2 border-b border-studio-secondary/50 pb-2">
-                  <span className="mono-label text-[8px] text-studio-silver">OFFERING:</span>
-                  <span className="sm:col-span-2 text-studio-charcoal font-medium">
-                    {service}
-                  </span>
-                </div>
-
-                <div className="flex flex-col sm:grid sm:grid-cols-3 gap-1 sm:gap-2 border-b border-studio-secondary/50 pb-2">
-                  <span className="mono-label text-[8px] text-studio-silver">PLAN ANCHOR:</span>
-                  <span className="sm:col-span-2 text-studio-charcoal font-medium uppercase font-mono text-[10px] flex flex-wrap items-center gap-1.5">
-                    <span>{tier}</span>
-                    <span className="text-studio-silver font-sans font-normal normal-case">({getTierPriceLabel()})</span>
-                  </span>
-                </div>
-
-                <div className="flex flex-col sm:grid sm:grid-cols-3 gap-1 sm:gap-2 border-b border-studio-secondary/50 pb-2">
-                  <span className="mono-label text-[8px] text-studio-silver">EST TIMELINE:</span>
-                  <span className="sm:col-span-2 text-studio-charcoal font-medium">
-                    {getEstimatedTimeline()}
-                  </span>
-                </div>
-
-                <div className="flex flex-col sm:grid sm:grid-cols-3 gap-1 sm:gap-2 border-b border-studio-secondary/50 pb-2">
-                  <span className="mono-label text-[8px] text-studio-silver">EST BUDGET:</span>
-                  <span className="sm:col-span-2 text-studio-charcoal font-bold text-sm">
-                    ₹{budget.toLocaleString()} INR
-                  </span>
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <span className="mono-label text-[8px] text-studio-silver">CLIENT STATEMENT:</span>
-                  <p className="font-serif italic text-studio-silver leading-relaxed bg-studio-secondary p-3 text-[11px] border-l border-studio-charcoal/20">
-                    {details ? `“${details}”` : '“No narrative supplied. Awaiting description details...”'}
-                  </p>
-                </div>
-              </div>
-
-              {/* Verified seal */}
-              <div className="border-t border-studio-secondary/80 pt-4 mt-2 flex items-center justify-between text-[9px] text-studio-silver font-mono">
-                <span className="flex items-center gap-1">
-                  <Sparkles className="h-3 w-3 text-studio-silver" />
-                  AUTHENTICATED BLUEPRINT
-                </span>
-                <span>STATUS: ACTIVE COMPILATION</span>
-              </div>
-            </div>
-
-            {/* Direct Studio Contact Suite */}
-            <div className="flex flex-col gap-4">
-              <span className="mono-label text-[9px] text-studio-silver pl-1">
+          {/* Right Block: Direct Studio Contact Suite (Now much larger and replacing the draft) */}
+          <div className="lg:col-span-5 flex flex-col gap-8 lg:pl-6">
+            <div className="flex flex-col gap-4 border-b border-studio-silver/10 pb-6">
+              <span className="mono-label text-[10px] text-studio-silver tracking-widest uppercase">
                 Direct Contact Suite
               </span>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <a
-                  href="mailto:sujnansuju@gmail.com"
-                  className="flex items-center gap-3 bg-studio-bg border border-studio-silver/10 hover:border-studio-charcoal p-4 transition-all duration-300 group"
-                >
-                  <Mail className="h-5 w-5 text-studio-silver group-hover:text-studio-charcoal shrink-0" />
-                  <div className="flex flex-col">
-                    <span className="mono-label text-[8px] text-studio-silver leading-none mb-1">Email</span>
-                    <span className="font-sans text-[11px] text-studio-charcoal font-medium truncate">
-                      sujnansuju@gmail.com
-                    </span>
-                  </div>
-                </a>
-
-                <a
-                  href="https://instagram.com/sujnxnn"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-3 bg-studio-bg border border-studio-silver/10 hover:border-studio-charcoal p-4 transition-all duration-300 group"
-                >
-                  <Instagram className="h-5 w-5 text-studio-silver group-hover:text-studio-charcoal shrink-0" />
-                  <div className="flex flex-col">
-                    <span className="mono-label text-[8px] text-studio-silver leading-none mb-1">Instagram</span>
-                    <span className="font-sans text-[11px] text-studio-charcoal font-medium truncate">
-                      @sujnxnn
-                    </span>
-                  </div>
-                </a>
-
-                <a
-                  href="https://wa.me/919901535017"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-3 bg-studio-bg border border-studio-silver/10 hover:border-studio-charcoal p-4 transition-all duration-300 group"
-                >
-                  <MessageSquare className="h-5 w-5 text-studio-silver group-hover:text-studio-charcoal shrink-0" />
-                  <div className="flex flex-col">
-                    <span className="mono-label text-[8px] text-studio-silver leading-none mb-1">WhatsApp</span>
-                    <span className="font-sans text-[11px] text-studio-charcoal font-medium truncate">
-                      +91 99015 35017
-                    </span>
-                  </div>
-                </a>
-              </div>
+              <h3 className="serif-header text-3xl md:text-4xl font-bold text-studio-charcoal leading-tight">
+                Connect Instantly
+              </h3>
+              <p className="font-sans text-xs md:text-sm text-studio-graphite leading-relaxed">
+                Have an urgent production deadline, custom venture, or retainer discussion in mind? Reach out directly through our premium channels.
+              </p>
             </div>
 
+            <div className="flex flex-col gap-6">
+              {/* WhatsApp card - Big and bold */}
+              <a
+                href="https://wa.me/919901535017"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-start gap-5 bg-studio-bg border border-studio-silver/10 hover:border-studio-charcoal p-6 md:p-8 transition-all duration-500 shadow-md hover:shadow-xl relative overflow-hidden"
+                id="direct-whatsapp-large"
+              >
+                <div className="absolute top-0 right-0 h-24 w-24 bg-studio-secondary/20 rounded-full translate-x-12 -translate-y-12 group-hover:scale-150 transition-transform duration-500" />
+                <div className="h-14 w-14 rounded-full bg-studio-secondary flex items-center justify-center text-studio-charcoal group-hover:bg-studio-charcoal group-hover:text-white transition-all duration-300 shrink-0">
+                  <MessageSquare className="h-6 w-6" />
+                </div>
+                <div className="flex flex-col gap-1.5 min-w-0 z-10">
+                  <span className="mono-label text-[9px] text-studio-silver uppercase tracking-widest leading-none">
+                    WhatsApp Chat • Instant Response
+                  </span>
+                  <span className="font-serif text-xl sm:text-2xl font-bold text-studio-charcoal group-hover:text-studio-graphite transition-colors">
+                    +91 99015 35017
+                  </span>
+                  <span className="font-sans text-xs text-studio-silver leading-normal">
+                    Direct thread with Sujnan. Typically replies within minutes.
+                  </span>
+                </div>
+              </a>
+
+              {/* Email card - Big and bold */}
+              <a
+                href="mailto:sujnansuju@gmail.com"
+                className="group flex items-start gap-5 bg-studio-bg border border-studio-silver/10 hover:border-studio-charcoal p-6 md:p-8 transition-all duration-500 shadow-md hover:shadow-xl relative overflow-hidden"
+                id="direct-email-large"
+              >
+                <div className="absolute top-0 right-0 h-24 w-24 bg-studio-secondary/20 rounded-full translate-x-12 -translate-y-12 group-hover:scale-150 transition-transform duration-500" />
+                <div className="h-14 w-14 rounded-full bg-studio-secondary flex items-center justify-center text-studio-charcoal group-hover:bg-studio-charcoal group-hover:text-white transition-all duration-300 shrink-0">
+                  <Mail className="h-6 w-6" />
+                </div>
+                <div className="flex flex-col gap-1.5 min-w-0 z-10">
+                  <span className="mono-label text-[9px] text-studio-silver uppercase tracking-widest leading-none">
+                    Official Inquiries
+                  </span>
+                  <span className="font-serif text-xl sm:text-2xl font-bold text-studio-charcoal group-hover:text-studio-graphite transition-colors truncate">
+                    sujnansuju@gmail.com
+                  </span>
+                  <span className="font-sans text-xs text-studio-silver leading-normal">
+                    Send detailed briefs, NDAs, and production requirements.
+                  </span>
+                </div>
+              </a>
+
+              {/* Instagram card - Big and bold */}
+              <a
+                href="https://instagram.com/sujnxnn"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-start gap-5 bg-studio-bg border border-studio-silver/10 hover:border-studio-charcoal p-6 md:p-8 transition-all duration-500 shadow-md hover:shadow-xl relative overflow-hidden"
+                id="direct-instagram-large"
+              >
+                <div className="absolute top-0 right-0 h-24 w-24 bg-studio-secondary/20 rounded-full translate-x-12 -translate-y-12 group-hover:scale-150 transition-transform duration-500" />
+                <div className="h-14 w-14 rounded-full bg-studio-secondary flex items-center justify-center text-studio-charcoal group-hover:bg-studio-charcoal group-hover:text-white transition-all duration-300 shrink-0">
+                  <Instagram className="h-6 w-6" />
+                </div>
+                <div className="flex flex-col gap-1.5 min-w-0 z-10">
+                  <span className="mono-label text-[9px] text-studio-silver uppercase tracking-widest leading-none">
+                    Visual Log & Updates
+                  </span>
+                  <span className="font-serif text-xl sm:text-2xl font-bold text-studio-charcoal group-hover:text-studio-graphite transition-colors">
+                    @sujnxnn
+                  </span>
+                  <span className="font-sans text-xs text-studio-silver leading-normal">
+                    Follow behind-the-scenes cuts, frames, and daily updates.
+                  </span>
+                </div>
+              </a>
+            </div>
           </div>
 
         </div>

@@ -44,7 +44,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             </svg>
             <div className="flex flex-col">
               <span className="font-serif text-base font-bold text-studio-charcoal leading-none">SUJ STUDIOS</span>
-              <span className="mono-label text-[7px] text-studio-silver leading-none mt-0.5">EST. 2024</span>
+              <span className="mono-label text-[7px] text-studio-silver leading-none mt-0.5">EST. 2026</span>
             </div>
           </button>
 
@@ -71,14 +71,6 @@ export default function Footer({ onNavigate }: FooterProps) {
               className="hover:text-studio-charcoal transition-colors"
             >
               WHATSAPP
-            </a>
-            <a
-              href="https://github.com/pool1706"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-studio-charcoal transition-colors"
-            >
-              GITHUB
             </a>
           </div>
 

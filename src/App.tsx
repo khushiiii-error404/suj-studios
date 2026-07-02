@@ -86,7 +86,7 @@ export default function App() {
       <div className="fixed top-1/2 right-6 -translate-y-1/2 hidden xl:flex flex-col items-center gap-4 z-40 pointer-events-none select-none">
         <div className="w-px h-16 bg-studio-charcoal/10" />
         <p className="text-[9px] font-mono uppercase tracking-[0.5em] font-semibold text-studio-charcoal/40 [writing-mode:vertical-lr]">
-          EST. 2024
+          EST. 2026
         </p>
         <div className="w-px h-16 bg-studio-charcoal/10" />
       </div>
