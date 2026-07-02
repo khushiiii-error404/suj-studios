@@ -41,17 +41,48 @@ export default function ContactSection({ selectedPlanId, onClearPlan }: ContactS
     }
   }, [selectedPlanId, onClearPlan]);
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    if (!name || !email) return;
+  const handleSubmit = async (e: FormEvent) => {
+  e.preventDefault();
 
-    // Generate custom project reference ID
-    const randomHex = Math.floor(Math.random() * 16777215).toString(16).toUpperCase().substring(0, 4);
-    const dateStr = new Date().getFullYear();
-    setProjectRef(`SUJ-${dateStr}-${randomHex}`);
-    setIsSubmitted(true);
-  };
+  if (!name || !email) return;
 
+  const randomHex = Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .toUpperCase()
+    .substring(0, 4);
+
+  const dateStr = new Date().getFullYear();
+  const reference = `SUJ-${dateStr}-${randomHex}`;
+
+  try {
+    const response = await fetch("https://formspree.io/f/mnjkovlqMSPREE_ENDPOINT", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        projectReference: reference,
+        name,
+        email,
+        service,
+        tier,
+        budget,
+        details,
+      }),
+    });
+
+    if (response.ok) {
+      setProjectRef(reference);
+      setIsSubmitted(true);
+    } else {
+      alert("Submission failed. Please try again.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong.");
+  }
+};
   const handleCopyProposal = () => {
     const proposal = `SUJ STUDIOS PROPOSAL DRAFT\nProject ID: ${projectRef}\nClient: ${name}\nService: ${service} (${tier.toUpperCase()})\nEstimated Budget: ₹${budget.toLocaleString()}\nBrief: ${details}`;
     navigator.clipboard.writeText(proposal);
