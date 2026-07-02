@@ -1,0 +1,6 @@
+{
+  "name": "SUJ STUDIOS",
+  "description": "Award-worthy premium website for SUJ STUDIOS, a cinematic creative studio specializing in visual storytelling, premium video editing, and photography.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
