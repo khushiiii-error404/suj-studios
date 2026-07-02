@@ -55,7 +55,7 @@ export default function ContactSection({ selectedPlanId, onClearPlan }: ContactS
   const reference = `SUJ-${dateStr}-${randomHex}`;
 
   try {
-    const response = await fetch("https://formspree.io/f/mnjkovlq", {
+    const response = await fetch("https://formspree.io/f/xzdlkglg", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
